@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "./node_modules/standard/eslintrc.json",
+    "eslint-config-next",
+    "next/core-web-vitals",
+    "eslint-config-prettier"
+  ]
+}
