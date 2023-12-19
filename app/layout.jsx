@@ -1,11 +1,23 @@
 import '@/styles/globals.css'
 
 import { quicksand } from '@/styles/fonts'
+import {
+  clubName,
+  clubDescription
+} from '@/data/info'
 
 import axios from 'axios'
 
 import { Providers } from './providers'
 import Navbar from '@/components/Navbar'
+
+export const metadata =
+  {
+    title:
+      clubName,
+    description:
+      clubDescription
+  }
 
 export default async function RootLayout({
   children
@@ -19,13 +31,8 @@ export default async function RootLayout({
 
   return (
     <html
-      lang='en'
+      lang='es'
       className='dark'>
-      <head>
-        <title>
-          club's
-        </title>
-      </head>
       <body
         className={`${quicksand} text-foreground font-normal bg-background`}>
         <Providers>
