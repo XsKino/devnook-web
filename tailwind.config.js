@@ -31,25 +31,23 @@ export const darkMode =
   'class'
 export const plugins =
   [
-    nextui(
-      {
-        addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
-        layout:
-          {}, // common layout tokens (applied to all themes)
-        themes:
-          {
-            light:
-              {
-                layout:
-                  {}, // light theme layout tokens
-                colors:
-                  lightThemeColors
-              },
-            dark: {
+    nextui({
+      addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
+      layout:
+        {}, // common layout tokens (applied to all themes)
+      themes:
+        {
+          light:
+            {
+              layout:
+                {}, // light theme layout tokens
               colors:
-                darkThemeColors
-            }
+                lightThemeColors
+            },
+          dark: {
+            colors:
+              darkThemeColors
           }
-      }
-    )
+        }
+    })
   ]
