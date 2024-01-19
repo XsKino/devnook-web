@@ -14,7 +14,7 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-  const { data } = await axios.post(process.env.BASE_URL + '/api/login')
+  const { data } = await axios.post('/api/login')
 
   return (
     <html lang='es' className='dark overflow-x-hidden w-screen'>

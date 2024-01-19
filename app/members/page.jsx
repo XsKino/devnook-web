@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default async function Members() {
-  const members = (await axios.get(process.env.BASE_URL + '/api/members')).data
+  const members = (await axios.get('/api/members')).data
 
   return (
     <ul>
