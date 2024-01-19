@@ -3,7 +3,7 @@ import '@/styles/globals.css'
 import { quicksand } from '@/styles/fonts'
 import { clubName, clubDescription } from '@/data/info'
 
-import axios from 'axios'
+// import axios from 'axios'
 
 import { Providers } from './providers'
 import Navbar from '@/components/Navbar'
@@ -14,7 +14,7 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-  const { data } = await axios.post('http://localhost:3000/api/login')
+  // const { data } = await axios.post(process.env.BASE_URL + '/api/login')
 
   return (
     <html lang='es' className='dark overflow-x-hidden w-screen'>
