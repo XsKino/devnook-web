@@ -73,20 +73,24 @@ const sectionProps = {
     description: 'Aquí encontrarás las respuestas a las preguntas más frecuentes.',
     questions: [
       {
-        title: 'Pregunta 1',
-        answer: 'Respuesta a la pregunta 1.'
+        title: '¿Qué es Dev Nook?',
+        answer: 'Dev Nook es un club de programación y desarrollo de software.'
       },
       {
-        title: 'Pregunta 2',
-        answer: 'Respuesta a la pregunta 2.'
+        title: '¿Cómo puedo unirme?',
+        answer: 'Para unirte debes de ser activo en el club y participar en los eventos y proyectos.'
       },
       {
-        title: 'Pregunta 3',
-        answer: 'Respuesta a la pregunta 3.'
+        title: '¿Donde se encuentran?',
+        answer: 'Nos encontramos en el edificio E, a un lado del laboratorio de electrónica.'
       },
       {
-        title: 'Pregunta 4',
-        answer: 'Respuesta a la pregunta 4.'
+        title: '¿Qué medios de contacto tienen?',
+        answer: 'Tenemos habilidatos Teams, Discord, WhatsApp'
+      },
+      {
+        title: '¿Qué actividades tiene?',
+        answer: 'El club tiene talleres, proyectos, eventos, club de lectura, proximamente oratoria y debate. '
       }
     ]
   }

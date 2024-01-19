@@ -1,3 +1,5 @@
+import { Divider } from '@nextui-org/react'
+import { Card, CardHeader, CardBody, CardFooter } from '@nextui-org/card'
 export default function LandingFAQ({ name, title, description, questions }) {
   return (
     <section id={name.toLowerCase()} className='py-12 px-8 md:py-24 lg:py-32 flex flex-col gap-8'>
@@ -10,15 +12,17 @@ export default function LandingFAQ({ name, title, description, questions }) {
           </p>
         </div>
       </div>
-
-      <div className='flex flex-col gap-4'>
+      <Card isBlurred  className='p-2 bg-gray-300 dark:bg-gray-900'>
+      <div className='flex flex-col gap-4 text-center'>
         {questions.map(({ title, answer }) => (
           <div className='flex flex-col gap-2' key={title}>
             <h3 className='text-xl font-bold'>{title}</h3>
-            <p className='text-gray-500 dark:text-gray-400'>{answer}</p>
+            <p className='text-gray-600 dark:text-gray-400'>{answer}</p>
+            <Divider />
           </div>
         ))}
       </div>
+      </Card>
     </section>
   )
 }
