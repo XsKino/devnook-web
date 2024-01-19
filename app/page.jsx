@@ -13,14 +13,14 @@ const sectionProps = {
     title: 'Próximos Eventos',
     description: 'Estos son los próximos eventos del club.',
     imageUrl: '/placeholder.svg',
-    imageAlt: 'Placeholder'
+    imageAlt: 'Placeholder1'
   },
   ptojects: {
     name: 'Proyectos',
     title: 'Próximos Proyectos',
     description: 'Estos son los próximos proyectos del club.',
     imageUrl: '/placeholder.svg',
-    imageAlt: 'Placeholder'
+    imageAlt: 'Placeholder2'
   },
   galery: {
     name: 'Galeria',
@@ -96,7 +96,7 @@ export default function Home() {
   return (
     <div className='flex flex-col'>
       <main className='flex-1'>
-        <header className='min-h-[100svh] py-12 md:py-24 lg:py-32 grid place-items-center'>
+        <header id='header' className='min-h-[100svh] py-12 md:py-24 lg:py-32 grid place-items-center'>
           <div className='flex flex-col items-center justify-center space-y-4 text-center'>
             <div className='space-y-2'>
               <h1 className='text-3xl font-bold tracking-tighter sm:text-5xl'>{clubName}</h1>

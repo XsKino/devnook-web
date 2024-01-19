@@ -29,51 +29,31 @@ export default function MyNavBar({ userData, className }) {
     {
       key: 'events',
       label: 'Eventos',
-      href: '#eventos'
+      id: 'eventos'
     },
     {
       key: 'projects',
       label: 'Proyectos',
-      href: '#proyectos'
+      id: 'proyectos'
     },
     {
       key: 'galery',
       label: 'Galería',
-      href: '#galeria'
+      id: 'galeria'
     },
     {
       key: 'info',
       label: 'Info',
-      href: '#faq'
+      id: 'faq'
     }
   ]
-  // const userMenuItems = [
-  //   {
-  //     key: 'profile',
-  //     label: 'Perfil',
-  //     href: '/#'
-  //   },
-  //   {
-  //     key: 'logout',
-  //     label: 'Cerrar sesión',
-  //     href: '/#'
-  //   }
-  // ]
-  // const guestMenuItems = [
-  //   {
-  //     key: 'login',
-  //     label: 'Iniciar sesión',
-  //     href: '/#'
-  //   },
-  //   {
-  //     key: 'register',
-  //     label: 'Registrarse',
-  //     href: '/#'
-  //   }
-  // ]
 
   return (
-    <Navbar shouldHideOnScroll maxWidth='md' className={`font-medium ${className}`}>
+    <Navbar
+      maxWidth='md'
+      className={`font-medium ${className}`}
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -81,9 +61,11 @@ export default function MyNavBar({ userData, className }) {
           onChange={() => setIsMenuOpen(!isMenuOpen)}
         />
         <NavbarBrand
-          href='/'
-          className={`'font-bold text-xl cursor-pointer group ${fugazOne.className}`}
-          as={NextLink}>
+          className={`font-bold text-xl cursor-pointer group ${fugazOne.className}`}
+          onClick={() => {
+            const $header = document.getElementById('header')
+            $header.scrollIntoView({ behavior: 'smooth' })
+          }}>
           <FaRocket className='inline-block mr-2 group-hover:text-primary transition-colors' />
           <div className='flex flex-col w-min'>
             <p className='bg-clip-text transition-all translate-y-1 group-hover:translate-y-0 group-hover:text-transparent bg-gradient-to-br from-primary to-secondary'>
@@ -100,60 +82,34 @@ export default function MyNavBar({ userData, className }) {
       <NavbarContent className='hidden sm:flex gap-4' justify='center'>
         <ButtonGroup variant='light' color='foreground'>
           {menuItems.map((item, index) => (
-            <Button key={`${item.href}-${index}`} as={NextLink} href={item.href}>
+            <Button
+              key={`${item.id}-${index}`}
+              onPress={() => {
+                const $section = document.getElementById(item.id)
+                $section.scrollIntoView({ behavior: 'smooth' })
+              }}>
               {item.label}
             </Button>
           ))}
         </ButtonGroup>
       </NavbarContent>
-      {/* USER */}
-      {/* <NavbarContent className='hidden sm:flex gap-4' justify='end'>
-        {user ? (
-          <User userData={user} items={userMenuItems} setUser={setUser} />
-        ) : (
-          guestMenuItems.map((item, index) => (
-            <NavbarItem key={`${item.href}-${index}`}>
-              <Button
-                color='primary'
-                variant={index === guestMenuItems.length - 1 ? 'ghost' : 'flat'}
-                href={item.href}
-                as={NextLink}>
-                {item.label}
-              </Button>
-            </NavbarItem>
-          ))
-        )}
-      </NavbarContent> */}
 
+      {/* Mobile menu */}
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link color='foreground' className='w-full' href={item.href} size='lg' as={NextLink}>
+            <button
+              onClick={() => {
+                setIsMenuOpen(false)
+                const $section = document.getElementById(item.id)
+                $section.scrollIntoView()
+              }}
+              className='w-full text-start'>
               {item.label}
-            </Link>
+            </button>
           </NavbarMenuItem>
         ))}
         <Divider />
-        {/* USER */}
-        {/* {user
-          ? userMenuItems.map((item, index) => (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Button href={item.href} as={NextLink} variant='shadow'>
-                  {item.label}
-                </Button>
-              </NavbarMenuItem>
-            ))
-          : guestMenuItems.map((item, index) => (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Button
-                  href={item.href}
-                  as={NextLink}
-                  variant={index === guestMenuItems.length - 1 ? 'ghost' : 'flat'}
-                  className='text-lg'>
-                  {item.label}
-                </Button>
-              </NavbarMenuItem>
-            ))} */}
         <ThemeSwitch />
       </NavbarMenu>
     </Navbar>

@@ -23,7 +23,7 @@ export default function Galery({ name = '', title, description, hallOfFame, pict
       <Carousel className='md:mx-12'>
         <CarouselContent>
           {hallOfFame.map(({ title, description, imageUrl }) => (
-            <CarouselItem className='flex flex-col p-6 pl-10 ' key={imageUrl}>
+            <CarouselItem className='flex flex-col p-6 pl-10 ' key={title}>
               <Image
                 alt={title}
                 className='overflow-hidden rounded-xl object-cover object-center w-full h-auto border'
@@ -45,7 +45,7 @@ export default function Galery({ name = '', title, description, hallOfFame, pict
       </Carousel>
       <div className='grid gap-8 grid-cols-[repeat(auto-fit,minmax(90px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]'>
         {pictures.map(({ description, imageUrl }) => (
-          <div key={imageUrl} className='flex flex-col gap-2'>
+          <div key={description} className='flex flex-col gap-2'>
             <Image
               alt={description}
               className='object-cover object-center rounded-xl border w-full h-auto'
