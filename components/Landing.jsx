@@ -4,52 +4,29 @@
  * @see https://v0.dev/t/BAZmNCmyUrA
  */
 import Link from 'next/link'
+import { clubDescription, clubName } from '@/data/info'
 
 export default function Landing() {
   return (
-    <div className='flex flex-col min-h-screen bg-blue-50 dark:bg-blue-900'>
-      <header className='px-4 lg:px-6 h-14 flex items-center'>
-        <Link className='flex items-center justify-center' href='#'>
-          <MountainIcon className='h-6 w-6' />
-          <span className='sr-only'>Acme Inc</span>
-        </Link>
-        <nav className='ml-auto flex gap-4 sm:gap-6'>
-          <Link className='text-sm font-medium hover:underline underline-offset-4' href='#'>
-            Eventos
-          </Link>
-          <Link className='text-sm font-medium hover:underline underline-offset-4' href='#'>
-            Proyectos
-          </Link>
-          <Link className='text-sm font-medium hover:underline underline-offset-4' href='#'>
-            Galería
-          </Link>
-          <Link className='text-sm font-medium hover:underline underline-offset-4' href='#'>
-            Preguntas Frecuentes
-          </Link>
-        </nav>
-      </header>
+    <div className='flex flex-col border'>
       <main className='flex-1'>
         <section className='w-full py-12 md:py-24 lg:py-32'>
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
-                <h1 className='text-3xl font-bold tracking-tighter sm:text-5xl'>
-                  Bienvenido al Club de Programación de la universidad
-                </h1>
+                <h1 className='text-3xl font-bold tracking-tighter sm:text-5xl'>{clubName}</h1>
                 <p className='max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'>
-                  Somos un club académico destinado a la programación y tecnología
+                  {clubDescription}
                 </p>
               </div>
             </div>
           </div>
         </section>
-        <section className='w-full py-12 md:py-24 lg:py-32 bg-blue-100 dark:bg-blue-800'>
+        <section className='w-full py-12 md:py-24 lg:py-32  '>
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
-                <div className='inline-block rounded-lg bg-blue-100 px-3 py-1 text-sm dark:bg-blue-800'>
-                  Eventos
-                </div>
+                <div className='inline-block rounded-lg  px-3 py-1 text-sm '>Eventos</div>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl'>Próximos Eventos</h2>
                 <p className='max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'>
                   Estos son los próximos eventos del club.
@@ -57,7 +34,7 @@ export default function Landing() {
               </div>
             </div>
             <div className='mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12'>
-              <img
+              <Image
                 alt='Image'
                 className='mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last'
                 height='310'
@@ -83,13 +60,11 @@ export default function Landing() {
             </div>
           </div>
         </section>
-        <section className='w-full py-12 md:py-24 lg:py-32 bg-blue-100 dark:bg-blue-800'>
+        <section className='w-full py-12 md:py-24 lg:py-32  '>
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
-                <div className='inline-block rounded-lg bg-blue-100 px-3 py-1 text-sm dark:bg-blue-800'>
-                  Proyectos
-                </div>
+                <div className='inline-block rounded-lg  px-3 py-1 text-sm '>Proyectos</div>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl'>Próximos Proyectos</h2>
                 <p className='max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'>
                   Estos son los próximos proyectos del club.
@@ -97,7 +72,7 @@ export default function Landing() {
               </div>
             </div>
             <div className='mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12'>
-              <img
+              <Image
                 alt='Image'
                 className='mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last'
                 height='310'
@@ -127,9 +102,7 @@ export default function Landing() {
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
-                <div className='inline-block rounded-lg bg-blue-100 px-3 py-1 text-sm dark:bg-blue-800'>
-                  Galería
-                </div>
+                <div className='inline-block rounded-lg  px-3 py-1 text-sm '>Galería</div>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl'>Salón de la fama</h2>
                 <p className='max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'>
                   Mira nuestras fotos destacadas.
@@ -138,21 +111,21 @@ export default function Landing() {
             </div>
             <div className='mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-1 lg:gap-12'>
               <div className='carousel'>
-                <img
+                <Image
                   alt='Image'
                   className='mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full'
                   height='310'
                   src='/placeholder.svg'
                   width='550'
                 />
-                <img
+                <Image
                   alt='Image'
                   className='mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full'
                   height='310'
                   src='/placeholder.svg'
                   width='550'
                 />
-                <img
+                <Image
                   alt='Image'
                   className='mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full'
                   height='310'
@@ -163,13 +136,11 @@ export default function Landing() {
             </div>
           </div>
         </section>
-        <section className='w-full py-12 md:py-24 lg:py-32 bg-blue-100 dark:bg-blue-800'>
+        <section className='w-full py-12 md:py-24 lg:py-32  '>
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
-                <div className='inline-block rounded-lg bg-blue-100 px-3 py-1 text-sm dark:bg-blue-800'>
-                  Preguntas Frecuentes
-                </div>
+                <div className='inline-block rounded-lg  px-3 py-1 text-sm '>Preguntas Frecuentes</div>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl'>Preguntas Frecuentes</h2>
                 <p className='max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'>
                   Aquí encontrarás las respuestas a las preguntas más frecuentes.
@@ -215,23 +186,5 @@ export default function Landing() {
         </nav>
       </footer>
     </div>
-  )
-}
-
-function MountainIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns='http://www.w3.org/2000/svg'
-      width='24'
-      height='24'
-      viewBox='0 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'>
-      <path d='m8 3 4 8 5-5 5 15H2L8 3z' />
-    </svg>
   )
 }

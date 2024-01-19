@@ -17,11 +17,11 @@ export default async function RootLayout({ children }) {
   const { data } = await axios.post('http://localhost:3000/api/login')
 
   return (
-    <html lang='es' className='dark'>
-      <body className={`${quicksand} text-foreground font-normal bg-background`}>
+    <html lang='es' className='dark overflow-x-hidden w-screen'>
+      <body className={`${quicksand} text-foreground font-normal bg-background w-screen`}>
         <Providers>
-          <Navbar userData={data} />
-          <main className='m-auto p-5 lg:p-0 lg:w-7/12'>{children}</main>
+          <Navbar userData={data} className='fixed' />
+          <main className='m-auto max-w-screen-md relative'>{children}</main>
         </Providers>
       </body>
     </html>

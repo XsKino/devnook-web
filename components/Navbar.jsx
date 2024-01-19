@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use client'
 import {
   Navbar,
@@ -28,46 +29,51 @@ export default function MyNavBar({ userData, className }) {
     {
       key: 'events',
       label: 'Eventos',
-      href: '/#'
+      href: '#eventos'
     },
     {
       key: 'projects',
       label: 'Proyectos',
-      href: '/#'
+      href: '#proyectos'
     },
     {
-      key: 'members',
-      label: 'Miembros',
-      href: '/members'
-    }
-  ]
-  const userMenuItems = [
-    {
-      key: 'profile',
-      label: 'Perfil',
-      href: '/#'
+      key: 'galery',
+      label: 'Galería',
+      href: '#galeria'
     },
     {
-      key: 'logout',
-      label: 'Cerrar sesión',
-      href: '/#'
+      key: 'info',
+      label: 'Info',
+      href: '#faq'
     }
   ]
-  const guestMenuItems = [
-    {
-      key: 'login',
-      label: 'Iniciar sesión',
-      href: '/#'
-    },
-    {
-      key: 'register',
-      label: 'Registrarse',
-      href: '/#'
-    }
-  ]
+  // const userMenuItems = [
+  //   {
+  //     key: 'profile',
+  //     label: 'Perfil',
+  //     href: '/#'
+  //   },
+  //   {
+  //     key: 'logout',
+  //     label: 'Cerrar sesión',
+  //     href: '/#'
+  //   }
+  // ]
+  // const guestMenuItems = [
+  //   {
+  //     key: 'login',
+  //     label: 'Iniciar sesión',
+  //     href: '/#'
+  //   },
+  //   {
+  //     key: 'register',
+  //     label: 'Registrarse',
+  //     href: '/#'
+  //   }
+  // ]
 
   return (
-    <Navbar shouldHideOnScroll className={`font-medium ${className}`}>
+    <Navbar shouldHideOnScroll maxWidth='md' className={`font-medium ${className}`}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -100,7 +106,8 @@ export default function MyNavBar({ userData, className }) {
           ))}
         </ButtonGroup>
       </NavbarContent>
-      <NavbarContent className='hidden sm:flex gap-4' justify='end'>
+      {/* USER */}
+      {/* <NavbarContent className='hidden sm:flex gap-4' justify='end'>
         {user ? (
           <User userData={user} items={userMenuItems} setUser={setUser} />
         ) : (
@@ -116,7 +123,7 @@ export default function MyNavBar({ userData, className }) {
             </NavbarItem>
           ))
         )}
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
@@ -127,7 +134,8 @@ export default function MyNavBar({ userData, className }) {
           </NavbarMenuItem>
         ))}
         <Divider />
-        {user
+        {/* USER */}
+        {/* {user
           ? userMenuItems.map((item, index) => (
               <NavbarMenuItem key={`${item}-${index}`}>
                 <Button href={item.href} as={NextLink} variant='shadow'>
@@ -145,7 +153,7 @@ export default function MyNavBar({ userData, className }) {
                   {item.label}
                 </Button>
               </NavbarMenuItem>
-            ))}
+            ))} */}
         <ThemeSwitch />
       </NavbarMenu>
     </Navbar>
