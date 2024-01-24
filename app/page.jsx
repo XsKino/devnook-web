@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import Link from 'next/link'
 import Image from 'next/image'
-import { clubName, clubDescription } from '@/data/info'
+import { clubName, clubDescription, galeryPictures } from '@/data/info'
 import Section from '@/components/LandingSection'
 import Galery from '@/components/LandingGalery'
 import FAQ from '@/components/LandingFAQ'
@@ -10,21 +10,21 @@ import FAQ from '@/components/LandingFAQ'
 const sectionProps = {
   events: {
     name: 'Eventos',
-    title: 'Próximos Eventos',
-    description: 'Estos son los próximos eventos del club.',
+    title: 'Eventos',
+    description: 'Próximos eventos.',
     imageUrl: '/placeholder.svg',
-    imageAlt: 'Placeholder1'
+    imageAlt: 'Placeholdera1t'
   },
   ptojects: {
     name: 'Proyectos',
-    title: 'Próximos Proyectos',
-    description: 'Estos son los próximos proyectos del club.',
+    title: 'proyectos',
+    description: 'Proyectos creados por el club.',
     imageUrl: '/placeholder.svg',
     imageAlt: 'Placeholder2'
   },
   galery: {
     name: 'Galeria',
-    title: 'Salón de la fama',
+    title: 'Galería',
     description: 'Mira nuestras fotos destacadas.',
     hallOfFame: [
       {
@@ -48,24 +48,7 @@ const sectionProps = {
         imageUrl: '/placeholder.svg'
       }
     ],
-    pictures: [
-      {
-        description: 'Descripción de la foto 1.',
-        imageUrl: '/placeholder.svg'
-      },
-      {
-        description: 'Descripción de la foto 2.',
-        imageUrl: '/placeholder.svg'
-      },
-      {
-        description: 'Descripción de la foto 3.',
-        imageUrl: '/placeholder.svg'
-      },
-      {
-        description: 'Descripción de la foto 4.',
-        imageUrl: '/placeholder.svg'
-      }
-    ]
+    pictures: galeryPictures
   },
   faq: {
     name: 'FAQ',
