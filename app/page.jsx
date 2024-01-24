@@ -15,17 +15,12 @@ const sectionProps = {
     imageUrl: '/placeholder.svg',
     imageAlt: 'Placeholdera1t'
   },
-  ptojects: {
+  projects: {
     name: 'Proyectos',
     title: 'proyectos',
     description: 'Proyectos creados por el club.',
     imageUrl: '/placeholder.svg',
-    imageAlt: 'Placeholder2'
-  },
-  galery: {
-    name: 'Galeria',
-    title: 'Galería',
-    description: 'Mira nuestras fotos destacadas.',
+    imageAlt: 'Placeholder2',
     hallOfFame: [
       {
         title: 'Proyecto 1',
@@ -47,7 +42,13 @@ const sectionProps = {
         description: 'Descripción del proyecto 4.',
         imageUrl: '/placeholder.svg'
       }
-    ],
+    ]
+  },
+  galery: {
+    name: 'Galeria',
+    title: 'Galería',
+    description: 'Mira nuestras fotos destacadas.',
+
     pictures: galeryPictures
   },
   faq: {
@@ -107,7 +108,7 @@ export default function Home() {
           </ul>
         </Section>
 
-        <Section {...sectionProps.ptojects}>
+        <Section {...sectionProps.projects}>
           <ul className='grid gap-6'>
             <li>
               <div className='grid gap-1'>

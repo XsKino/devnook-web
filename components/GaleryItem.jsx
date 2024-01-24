@@ -13,7 +13,7 @@ export default function GaleryItem({ url, description, onOpen, setCurrent, index
       <button onClick={handleClick} key={description}>
         <Image
           alt={description}
-          className='object-cover object-center rounded-xl shadow-xl shadow-black/20 w-full h-auto'
+          className='object-cover object-center rounded-md shadow-xl shadow-black/20 w-full h-auto'
           width={200}
           height={130}
           src={`/img/galery/${url}`}
